@@ -22,6 +22,7 @@ public class Department {
 
     private Long organizationId;
     private String name;
+    @OneToMany(mappedBy = "departmentId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Employee> employees;
     private String position;
 
