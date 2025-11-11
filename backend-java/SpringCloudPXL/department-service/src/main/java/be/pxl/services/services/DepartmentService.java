@@ -3,7 +3,6 @@ package be.pxl.services.services;
 import be.pxl.services.domain.Department;
 import be.pxl.services.domain.Employee;
 import be.pxl.services.repository.DepartmentRepository;
-import be.pxl.services.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,8 +30,8 @@ public class DepartmentService implements IDepartmentService {
         return departmentRepository.findByOrganizationId(organizationId);
     }
 
-    public List<Department> findByOrganizationWithEmployees(Long organizationId) {
-        return departmentRepository.findByOrganizationIdWithEmployees(organizationId);
-    }
+//    public List<Department> findByOrganizationWithEmployees(Long organizationId) {
+//        return departmentRepository.findByOrganizationIdWithEmployees(organizationId);
+//    }
 
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
     List<Department> findByOrganizationId(Long organizationId);
-    @Query("SELECT d from Department d LEFT JOIN FETCH d.employees WHERE d.organizationId = :organization_id")
-    List<Department> findByOrganizationIdWithEmployees(Long organizationId);
+//    @Query("SELECT d from Department d LEFT JOIN FETCH d.employees WHERE d.organizationId = :organization_id")
+//    List<Department> findByOrganizationIdWithEmployees(Long organizationId);
 
 }

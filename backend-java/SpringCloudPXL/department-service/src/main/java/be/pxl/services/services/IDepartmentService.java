@@ -10,5 +10,5 @@ public interface IDepartmentService {
     Department findById(Long id);
     Department add(Department department);
     List<Department> findByOrganization(Long organizationId);
-    List<Department> findByOrganizationWithEmployees(Long organizationId);
+//    List<Department> findByOrganizationWithEmployees(Long organizationId);
 }

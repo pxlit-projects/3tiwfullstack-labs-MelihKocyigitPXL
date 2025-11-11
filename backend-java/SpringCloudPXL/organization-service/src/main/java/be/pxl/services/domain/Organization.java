@@ -20,8 +20,8 @@ public class Organization {
 
     private String name;
     private String address;
-    @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Transient
     private List<Employee> employees;
-    @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Transient
     private List<Department> departments;
 }

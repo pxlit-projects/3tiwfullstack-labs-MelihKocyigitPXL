@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+  mysql-employee:
+    image: mysql:latest
+    ports:
+      - '3306:3306'
+    restart: always
+    environment:
+      MYSQL_DATABASE: employeeservice_db
+      #      MYSQL_USER: root
+      #      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysql-employee-data:/var/lib/mysql
+
+  mysql-department:
+    image: mysql:latest
+    ports:
+      - '3307:3306'
+    restart: always
+    environment:
+      MYSQL_DATABASE: departmentservice_db
+      #      MYSQL_USER: root
+      #      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysql-department-data:/var/lib/mysql
+
+  mysql-organization:
+    image: mysql:latest
+    ports:
+      - '3308:3306'
+    restart: always
+    environment:
+      MYSQL_DATABASE: organizationservice_db
+      #      MYSQL_USER: root
+      #      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysql-organization-data:/var/lib/mysql
+
+
+  rabbitmq:
+    image: "rabbitmq:3-management-alpine"
+    ports:
+      - "5672:5672"  # RabbitMQ default port
+      - "15672:15672"  # RabbitMQ Management Console
+    restart: always
+
+
+volumes:
+  mysql-employee-data:
+  mysql-department-data:
+  mysql-organization-data:
