@@ -1,4 +1,4 @@
 package be.pxl.services.repository;
 
-public class EmployeeRepository {
+public class OrganizationRepository {
 }
